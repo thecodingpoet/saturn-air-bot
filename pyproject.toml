@@ -3,5 +3,13 @@ name = "saturn-air-bot"
 version = "0.1.0"
 description = "A RAG-based FAQ assistant for Saturn Air that delivers instant, grounded answers from internal documentation."
 readme = "README.md"
-requires-python = ">=3.14"
-dependencies = []
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=1.0.5",
+    "langchain-chroma>=1.0.0",
+    "langchain-community>=0.4.1",
+    "langchain-openai>=1.0.2",
+    "langchain-text-splitters>=1.0.0",
+    "pytest>=9.0.0",
+    "python-dotenv>=1.2.1",
+]
