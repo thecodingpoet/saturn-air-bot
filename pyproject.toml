@@ -1,0 +1,7 @@
+[project]
+name = "saturn-air-bot"
+version = "0.1.0"
+description = "A RAG-based FAQ assistant for Saturn Air that delivers instant, grounded answers from internal documentation."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
