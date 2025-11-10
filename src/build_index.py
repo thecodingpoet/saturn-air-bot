@@ -1,52 +1,79 @@
 from pathlib import Path
-from langchain_community.document_loaders import DirectoryLoader, TextLoader
+import logging
+from dotenv import load_dotenv
+from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain_core.documents import Document
-from dotenv import load_dotenv
 
 load_dotenv()
 
-FAQ_DOCUMENT_PATH = Path("data/faq_document.txt")
+DATA_DIR = Path("data")
+FAQ_DOCUMENT_PATH = DATA_DIR / "faq_document.txt"
 CHROMA_DB_PATH = Path("chroma_db")
 
-embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+EMBEDDING_MODEL = "text-embedding-3-large"
+CHUNK_SIZE = 500
+CHUNK_OVERLAP = 200
+
+logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
+
+embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL)
 
 
-def load_document() -> list[Document]:
-    """Load the FAQ document from the data directory."""
-    loader = TextLoader(FAQ_DOCUMENT_PATH)
+def load_document(path: Path) -> list[Document]:
+    """Load a single FAQ document from the given path."""
+    logging.info(f"📄 Loading document from {path}")
+    loader = TextLoader(path)
     return loader.load()
 
 
-def create_chunks(documents) -> list[Document]:
-    """Create chunks from the documents."""
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=200)
-    return text_splitter.split_documents(documents)
+def split_into_chunks(documents: list[Document]) -> list[Document]:
+    """Split documents into smaller overlapping chunks."""
+    logging.info(f"✂️  Splitting {len(documents)} document(s) into chunks...")
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP
+    )
+    chunks = splitter.split_documents(documents)
+    logging.info(f"✅ Created {len(chunks)} chunks")
+    return chunks
 
 
-def create_embeddings(chunks) -> Chroma:
-    """Create embeddings from the chunks and save them to the ChromaDB."""
+def build_vector_store(chunks: list[Document]) -> Chroma:
+    """Embed the chunks and persist them in a Chroma vector store."""
     if CHROMA_DB_PATH.exists():
+        logging.info("🗑️  Existing Chroma DB found — deleting old collection.")
         Chroma(
-            persist_directory=CHROMA_DB_PATH, embedding_function=embeddings
+            persist_directory=str(CHROMA_DB_PATH), embedding_function=embeddings
         ).delete_collection()
 
-    return Chroma.from_documents(
+    logging.info("📦  Creating new Chroma vector store...")
+    store = Chroma.from_documents(
         documents=chunks, embedding=embeddings, persist_directory=str(CHROMA_DB_PATH)
+    )
+    logging.info("✅ Chroma DB created successfully.")
+    return store
+
+
+def display_vector_store_stats(store: Chroma) -> None:
+    """Display statistics about the Chroma vector store."""
+    collection = store._collection
+    count = collection.count()
+    sample_embedding = collection.get(limit=1, include=["embeddings"])["embeddings"][0]
+    dimensions = len(sample_embedding)
+    logging.info(
+        f"📊 Vector store contains {count:,} vectors of {dimensions:,} dimensions."
     )
 
 
+def main() -> None:
+    """Main pipeline for loading, splitting, and embedding the FAQ document."""
+    documents = load_document(FAQ_DOCUMENT_PATH)
+    chunks = split_into_chunks(documents)
+    store = build_vector_store(chunks)
+    display_vector_store_stats(store)
+
+
 if __name__ == "__main__":
-    documents = load_document()
-    chunks = create_chunks(documents)
-    index = create_embeddings(chunks)
-
-    collection = index._collection
-    count = collection.count()
-
-    sample_embedding = collection.get(limit=1, include=["embeddings"])["embeddings"][0]
-    dimensions = len(sample_embedding)
-    print(f"There are {count:,} vectors with {dimensions:,} dimensions in the vector store")
-
+    main()
