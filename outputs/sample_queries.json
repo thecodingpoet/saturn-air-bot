@@ -1,0 +1,341 @@
+[
+    {
+        "user_question": "What is your baggage policy?",
+        "system_answer": "Our baggage policy allows one personal item and one carry-on bag per passenger. The carry-on must fit in the overhead bin and be within 22 x 14 x 9 inches, weighing up to 40 pounds. Personal items should not exceed 18 x 14 x 8 inches. Checked baggage fees vary by fare type and route, with specific allowances for different classes. Additional fees apply for extra, overweight, or oversized bags. For detailed information, please let me know your fare type or route!",
+        "chunks_related": [
+          {
+            "content": "BAGGAGE POLICIES",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "All passengers are permitted one personal item (purse, laptop bag, or small backpack) that must fit under the seat in front of you, and one carry-on bag that must fit in the overhead bin. Maximum dimensions for carry-on bags are 22 x 14 x 9 inches, including handles and wheels. The maximum weight is 40 pounds. Personal items must not exceed 18 x 14 x 8 inches. Items that exceed these dimensions will need to be checked and standard checked baggage fees will apply. Priority boarding passengers",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Carry-On Baggage Allowance",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Checked Baggage Allowance and Fees",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Checked baggage fees vary by fare type and route. Basic Economy fares do not include checked baggage, and the first checked bag costs $35 for domestic flights and $50 for international flights. Standard Economy includes one free checked bag (up to 50 pounds and 62 linear inches), with the second bag costing $45 domestic and $65 international. Flex Economy and Premium Economy include two free checked bags. Business Class includes three free checked bags. Additional bags beyond the allowance cost",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "is 40 pounds. Personal items must not exceed 18 x 14 x 8 inches. Items that exceed these dimensions will need to be checked and standard checked baggage fees will apply. Priority boarding passengers and elite frequent flyer members may board early to ensure overhead bin space availability.",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Baggage on Connecting Flights",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Sports equipment such as golf clubs, skis, snowboards, and bicycles can be checked for a fee of $75 per item, subject to size and weight restrictions. Musical instruments can be carried on if they fit in overhead bins or under seats, or checked for standard baggage fees. Large instruments may require purchasing an additional seat. Medical equipment, mobility devices, and assistive devices travel free of charge and do not count toward baggage allowances. Firearms must be declared and packed",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "costing $45 domestic and $65 international. Flex Economy and Premium Economy include two free checked bags. Business Class includes three free checked bags. Additional bags beyond the allowance cost $150 each. Overweight bags (51-70 pounds) incur a $100 fee, and oversized bags (63-80 linear inches) cost $200. Bags over 70 pounds or 80 linear inches cannot be accepted as checked baggage.",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "claims, we will reimburse reasonable expenses for essential items purchased while your bag is missing, up to $50 per day for up to 5 days. If your bag is not located within 21 days, it will be declared lost and you may file a claim for compensation up to $3,500 for domestic flights and international limits as per the Montreal Convention.",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          }
+        ],
+        "evaluation": {
+          "chunk_relevance_score": 9,
+          "answer_accuracy_score": 9,
+          "completeness_score": 8,
+          "tone_score": 10,
+          "out_of_scope_handling_score": 10,
+          "overall_score": 9,
+          "strengths": [
+            "The answer accurately summarizes key baggage policies including personal item size, carry-on dimensions, weight limits, and fee variations.",
+            "The tone is friendly, professional, and helpful.",
+            "The response appropriately declines to provide exhaustive details and encourages the user to specify their fare type or route for more information."
+          ],
+          "weaknesses": [
+            "The answer could include more details about checked baggage allowances and fees, as some specifics are only in the chunks and not fully summarized.",
+            "It slightly omits mentioning specific baggage allowances for different fare classes and the fees for overweight/oversized bags, which are present in the chunks."
+          ],
+          "improvement_suggestions": "Include a brief summary of checked baggage allowances and fees for different fare classes to improve completeness. Clarify that detailed policies are available upon request or via official resources for comprehensive information."
+        },
+        "quality_score": 9
+    },
+    {
+        "user_question": "What is the capital of France?",
+        "system_answer": "I'm here to assist with Saturn Airlines services and policies. I'm not able to help with questions about the capital of France. If you have any questions about Saturn Airlines, I'd be happy to help!",
+        "chunks_related": [
+          {
+            "content": "Terminal and Airport Changes",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Changing Flight Routes and Destinations",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Passport and Visa Requirements",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "For international flights, a valid passport is required, and many destinations require visas. It is the passenger's responsibility to ensure they have all required travel documents. We recommend checking entry requirements for your destination country at least 30 days before travel.",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Changing Flight Dates and Times",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Travel Credits and Vouchers",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "FLIGHT CHANGES AND CANCELLATIONS",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "We accept all major credit cards (Visa, Mastercard, American Express, Discover), debit cards, PayPal, Apple Pay, Google Pay, and bank transfers for bookings made at least 14 days in advance. For international bookings, we also accept wire transfers. Payment plans are available for bookings over $500 through our partnership with Affirm, allowing you to pay in installments. All prices are displayed in USD, and currency conversion is handled automatically for international payment methods.",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "London flight is international, you'll clear U.S. customs in New York. If you're flying from London to Los Angeles with a connection in New York, you'll clear U.S. customs and immigration in New York before continuing to Los Angeles. Allow extra time for international connections to account for customs processing, which can take 30 minutes to 2 hours depending on the airport and time of day. You may need to collect your checked baggage, clear customs, and recheck it before continuing. Our",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Airport Check-In",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          }
+        ],
+        "evaluation": {
+          "chunk_relevance_score": 1,
+          "answer_accuracy_score": 10,
+          "completeness_score": 10,
+          "tone_score": 9,
+          "out_of_scope_handling_score": 10,
+          "overall_score": 8,
+          "strengths": [
+            "Correctly recognizes that the question is outside the scope of Saturn Airlines information.",
+            "Provides a polite and professional decline.",
+            "Properly handles an unrelated general knowledge question."
+          ],
+          "weaknesses": [
+            "The response could be slightly more personable or empathetic in tone.",
+            "The answer is very brief; a slightly warmer tone might improve user experience."
+          ],
+          "improvement_suggestions": "Add a friendly closing remark to enhance tone, e.g., 'Let me know if you have any questions about your flight or bookings with Saturn Airlines.'"
+        },
+        "quality_score": 8
+    },
+    {
+        "user_question": "Who is the founder?",
+        "system_answer": "Saturn Airlines was founded by aviation entrepreneur Marcus Chen and a team of experienced pilots and industry professionals.",
+        "chunks_related": [
+          {
+            "content": "Saturn Airlines was founded in 1998 by aviation entrepreneur Marcus Chen and a team of experienced pilots and industry professionals. Headquartered in San Francisco, California, Saturn Airlines has grown from a regional carrier serving the West Coast to one of North America's premier airlines, operating over 500 daily flights to more than 80 destinations across the United States, Canada, Mexico, and the Caribbean. The company employs over 12,000 dedicated professionals and maintains a fleet of",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Our Mission and Values",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Contact Information",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "SATURN AIRLINES - FREQUENTLY ASKED QUESTIONS\n\nCOMPANY INFORMATION",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Credit Card Partnerships",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Environmental Initiatives",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "PARTNERSHIPS AND ALLIANCES",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "CUSTOMER SERVICE AND SUPPORT",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "dedicated account management, and flexible payment terms. Students with valid ID receive 10% off base fares year-round. Active military personnel and veterans receive priority boarding, free checked bags, and discounted fares. We also offer credit cards in partnership with major banks that earn bonus miles on everyday purchases and provide additional travel benefits.",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Loyalty and Retention",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          }
+        ],
+        "evaluation": {
+          "chunk_relevance_score": 9,
+          "answer_accuracy_score": 10,
+          "completeness_score": 8,
+          "tone_score": 9,
+          "out_of_scope_handling_score": 10,
+          "overall_score": 9,
+          "strengths": [
+            "The answer accurately identifies the founder, Marcus Chen, as indicated in the relevant chunk.",
+            "The response is concise, relevant, and professional."
+          ],
+          "weaknesses": [
+            "The answer could be slightly more complete by mentioning the founding year (1998) or additional founding details from the chunk.",
+            "It does not explicitly mention the headquarters or the broader founding team beyond Marcus Chen."
+          ],
+          "improvement_suggestions": "Include the founding year and possibly mention the headquarters or the team to enhance completeness, e.g., 'Founded in 1998 by Marcus Chen in San Francisco...'"
+        },
+        "quality_score": 9
+    },
+    {
+        "user_question": "How do I book a ticket?",
+        "system_answer": "You can book a ticket through our official website at www.saturnairlines.com, our mobile app (available for iOS and Android), by calling our reservations center at 1-800-SATURN-1 (1-800-728-8761), or through authorized travel agents. Online bookings are available 24/7, and you can search for flights by destination, date, and number of passengers. If you need further assistance, please let me know!",
+        "chunks_related": [
+          {
+            "content": "How to Book a Flight",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "BOOKING AND RESERVATIONS",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "center operates from 5:00 AM to 11:00 PM Pacific Time, seven days a week. When booking online, you can search for flights by destination, date, and number of passengers. Our booking system allows you to compare prices across different fare classes and select seats during the booking process.",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "You can upgrade your seat through multiple channels: during booking, after booking through \"My Trips\" on our website or app, at check-in, or at the airport. To upgrade online, log into your account, select your reservation, and click \"Upgrade Seat.\" You'll see available upgrade options with pricing. Upgrades can be purchased using cash, miles, or a combination of both. Upgrade availability is limited and varies by flight, so we recommend upgrading as early as possible. You can also request",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "You can book flights through multiple channels: our official website at www.saturnairlines.com, our mobile app (available for iOS and Android), by calling our reservations center at 1-800-SATURN-1 (1-800-728-8761), or through authorized travel agents. Online bookings are available 24/7, while our call center operates from 5:00 AM to 11:00 PM Pacific Time, seven days a week. When booking online, you can search for flights by destination, date, and number of passengers. Our booking system allows",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Group Bookings",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "How to Edit or Modify Your Flight Reservation",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "select or change your seat (subject to availability and fare restrictions), add checked baggage, purchase upgrades, and receive your mobile boarding pass. Mobile boarding passes can be saved to your phone's wallet app for easy access at the airport.",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "We accept all major credit cards (Visa, Mastercard, American Express, Discover), debit cards, PayPal, Apple Pay, Google Pay, and bank transfers for bookings made at least 14 days in advance. For international bookings, we also accept wire transfers. Payment plans are available for bookings over $500 through our partnership with Affirm, allowing you to pay in installments. All prices are displayed in USD, and currency conversion is handled automatically for international payment methods.",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          },
+          {
+            "content": "Award tickets can be upgraded using additional miles. Upgrades are subject to seat availability and cannot be guaranteed until confirmed. Some routes may not offer upgrade options if premium cabins are not available on the aircraft type. International upgrades may have additional restrictions based on visa requirements or fare rules. Upgrades purchased with miles are subject to award availability, which may differ from cash upgrade availability. Group bookings may have limited upgrade",
+            "metadata": {
+              "source": "data/faq_document.txt"
+            }
+          }
+        ],
+        "evaluation": {
+          "chunk_relevance_score": 9,
+          "answer_accuracy_score": 9,
+          "completeness_score": 8,
+          "tone_score": 9,
+          "out_of_scope_handling_score": 10,
+          "overall_score": 9,
+          "strengths": [
+            "The answer accurately reflects the booking channels mentioned in the chunks.",
+            "The tone is friendly and professional.",
+            "The response appropriately declines further assistance politely."
+          ],
+          "weaknesses": [
+            "The answer could include more details about the booking process, such as searching for flights or selecting seats.",
+            "It does not mention the operating hours of the reservations center, which is available in the chunks."
+          ],
+          "improvement_suggestions": "Include additional details from the chunks about how to search for flights, select seats, or upgrade options to improve completeness. Also, mention the operating hours of the reservations center for clarity."
+        },
+        "quality_score": 9
+    }  
+]
