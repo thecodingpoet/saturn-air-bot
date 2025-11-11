@@ -5,6 +5,7 @@ description = "A RAG-based FAQ assistant for Saturn Air that delivers instant, g
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "gradio>=5.49.1",
     "langchain>=1.0.5",
     "langchain-chroma>=1.0.0",
     "langchain-community>=0.4.1",
