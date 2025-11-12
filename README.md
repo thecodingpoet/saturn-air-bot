@@ -117,6 +117,20 @@ This will:
 - Allow interactive Q&A without JSON output
 - Display only the assistant's response (no chunks or evaluation)
 
+## Testing
+
+Run the full test suite:
+
+```bash
+uv run pytest tests/
+```
+
+Run tests with verbose output:
+
+```bash
+uv run pytest tests/ -v
+```
+
 ## Configuration
 
 Key configuration parameters in `src/query.py`:
