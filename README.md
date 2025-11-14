@@ -54,17 +54,6 @@ This will:
 - Create embeddings using OpenAI's `text-embedding-3-large` model
 - Store the vector index in `chroma_db/`
 
-## How Query Processing Works
-
-When you submit a query, `src/query.py` performs the following steps:
-
-- **Query Embedding**: Converts your natural language question into a vector embedding using OpenAI's `text-embedding-3-large` model
-- **Similarity Search**: Performs k-nearest neighbors (KNN) search in the Chroma vector store to find the top-k most semantically similar document chunks (default: k=10)
-- **Context Retrieval**: Retrieves the actual text content from the most relevant chunks
-- **Prompt Construction**: Builds a system prompt that includes the retrieved context and guidelines for the AI assistant
-- **LLM Generation**: Sends the prompt and user query to the language model (`gpt-4.1-nano`) to generate a grounded, contextual answer
-- **Response Formatting**: Returns the answer along with metadata about retrieved chunks and optional quality evaluation
-
 ## Usage
 
 ### 1. Command-Line Interface (CLI)
@@ -80,6 +69,8 @@ uv run python src/query.py -q "What is your baggage policy?"
 ```bash
 uv run python src/query.py -q "What is your baggage policy?" --evaluate
 ```
+
+Example queries can be found in [`outputs/sample_queries.json`](outputs/sample_queries.json).
 
 #### CLI Output Format
 
@@ -125,45 +116,24 @@ uv run python src/app.py
 This will:
 - Launch a web interface in your default browser
 - Provide example questions to get started
-- Allow interactive Q&A without JSON output
-- Display only the assistant's response (no chunks or evaluation)
+- Display interactive Q&A responses
 
 ## Testing
 
-Run the full test suite:
+Run the test suite using pytest:
 
 ```bash
 uv run pytest tests/
 ```
 
-Run tests with verbose output:
+To run tests with verbose output:
 
 ```bash
 uv run pytest tests/ -v
 ```
 
-## Configuration
+## Documentation
 
-Key configuration parameters in `src/query.py`:
+For comprehensive technical documentation, see:
+- **[Technical Report](docs/report.md)**: System architecture, limitations, and improvement strategies
 
-- `MODEL`: LLM model name (default: `"gpt-4.1-nano"`)
-- `EMBEDDING_MODEL`: Embedding model (default: `"text-embedding-3-large"`)
-- `RETRIEVAL_K`: Number of chunks to retrieve (default: `10`)
-
-Chunking parameters in `src/build_index.py`:
-
-- `CHUNK_SIZE`: Character size per chunk (default: `500`)
-- `CHUNK_OVERLAP`: Overlap between chunks (default: `200`)
-
-## Limitations
-
-- **No Chat History**: The system does not maintain conversation history. Each query is processed independently without context from previous interactions.
-- **Single Document Source**: Currently supports a single FAQ document (`data/faq_document.txt`)
-- **No Offline Support**: Relies on OpenAI's `text-embedding-3-large` API for embeddings, requiring internet connectivity and incurring API costs. Local embedding models (e.g., `all-MiniLM-L6-v2`, `all-mpnet-base-v2`) could enable offline operation, eliminate costs, and ensure complete data privacy, though with trade-offs in embedding dimensions (384 vs 3072) and potentially slight accuracy differences.
-
-## Improvements
-
-- **Reranking**: More accurate ordering of retrieved chunks for better final answers.
-- **Query expansion**: Higher recall by capturing paraphrases and synonyms the user didn't type.
-- **ANN indexing**: When the knowledge base grows significantly (or latency becomes critical), switch to ANN to keep retrieval fast.
-- **Hybrid search + metadata filters**: More robust relevance by combining exact and semantic matches while narrowing to the most pertinent chunks.
