@@ -6,12 +6,12 @@ Saturn Air Bot is an intelligent FAQ support assistant built for Saturn Airlines
 
 ## Features
 
-- **RAG-Powered Q&A**: Uses vector embeddings and semantic search to retrieve relevant context from FAQ documents
-- **Dual Interface**: Available via command-line interface (CLI) and web-based chat interface
-- **Quality Evaluation**: Optional answer quality assessment with detailed metrics
-- **Out-of-Scope Handling**: Intelligently declines unrelated questions and provides contact information for Saturn Airlines-specific queries not in the knowledge base
-- **Chunk-Based Retrieval**: Efficient document chunking with configurable size and overlap
-- **Structured Output**: CLI returns detailed JSON with question, answer, retrieved chunks, and optional evaluation metrics
+- 🔍 **RAG-Powered Q&A**: Uses vector embeddings and semantic search to retrieve relevant context from FAQ documents
+- 🔄 **Dual Interface**: Available via command-line interface (CLI) and web-based chat interface
+- ✅ **Quality Evaluation**: Optional answer quality assessment with detailed metrics
+- 🚫 **Out-of-Scope Handling**: Intelligently declines unrelated questions and provides contact information for Saturn Airlines-specific queries not in the knowledge base
+- 📄 **Chunk-Based Retrieval**: Efficient document chunking with configurable size and overlap
+- 📊 **Structured Output**: CLI returns detailed JSON with question, answer, retrieved chunks, and optional evaluation metrics
 
 ## Installation
 
@@ -53,6 +53,17 @@ This will:
 - Split them into chunks
 - Create embeddings using OpenAI's `text-embedding-3-large` model
 - Store the vector index in `chroma_db/`
+
+## How Query Processing Works
+
+When you submit a query, `src/query.py` performs the following steps:
+
+- **Query Embedding**: Converts your natural language question into a vector embedding using OpenAI's `text-embedding-3-large` model
+- **Similarity Search**: Performs k-nearest neighbors (KNN) search in the Chroma vector store to find the top-k most semantically similar document chunks (default: k=10)
+- **Context Retrieval**: Retrieves the actual text content from the most relevant chunks
+- **Prompt Construction**: Builds a system prompt that includes the retrieved context and guidelines for the AI assistant
+- **LLM Generation**: Sends the prompt and user query to the language model (`gpt-4.1-nano`) to generate a grounded, contextual answer
+- **Response Formatting**: Returns the answer along with metadata about retrieved chunks and optional quality evaluation
 
 ## Usage
 
@@ -148,4 +159,11 @@ Chunking parameters in `src/build_index.py`:
 
 - **No Chat History**: The system does not maintain conversation history. Each query is processed independently without context from previous interactions.
 - **Single Document Source**: Currently supports a single FAQ document (`data/faq_document.txt`)
+- **No Offline Support**: Relies on OpenAI's `text-embedding-3-large` API for embeddings, requiring internet connectivity and incurring API costs. Local embedding models (e.g., `all-MiniLM-L6-v2`, `all-mpnet-base-v2`) could enable offline operation, eliminate costs, and ensure complete data privacy, though with trade-offs in embedding dimensions (384 vs 3072) and potentially slight accuracy differences.
 
+## Improvements
+
+- **Reranking**: More accurate ordering of retrieved chunks for better final answers.
+- **Query expansion**: Higher recall by capturing paraphrases and synonyms the user didn't type.
+- **ANN indexing**: When the knowledge base grows significantly (or latency becomes critical), switch to ANN to keep retrieval fast.
+- **Hybrid search + metadata filters**: More robust relevance by combining exact and semantic matches while narrowing to the most pertinent chunks.
